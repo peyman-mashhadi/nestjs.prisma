@@ -5,5 +5,5 @@ export class DeleteUserDto {
   id: number;
   @IsBoolean()
   @IsOptional()
-  hard_delete?: boolean;
+  hard?: boolean;
 }

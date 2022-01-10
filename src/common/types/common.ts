@@ -4,4 +4,3 @@ export interface WhereConditions {
   updated_at?: { gte: Date };
   email?: string;
 }
-

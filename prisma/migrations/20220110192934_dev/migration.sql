@@ -5,7 +5,7 @@ CREATE TABLE "users" (
     "email" TEXT,
     "email_confirmed" BOOLEAN NOT NULL DEFAULT false,
     "is_admin" BOOLEAN NOT NULL DEFAULT false,
-    "credentials_id" INTEGER NOT NULL,
+    "credentials_id" INTEGER,
     "created_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" DATETIME,
     CONSTRAINT "users_credentials_id_fkey" FOREIGN KEY ("credentials_id") REFERENCES "credentials" ("id") ON DELETE SET NULL ON UPDATE CASCADE

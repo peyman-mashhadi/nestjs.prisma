@@ -69,6 +69,25 @@ Command lines:
 - ![postman_tests.png](postman_tests.png)
 - Send us this screenshot as well as the export of your postman tests.
 
-### Your Notes Below Here
+## Your Notes Below Here
 
-...
+### Postman Test Results Screenshots
+
+![my_postman_tests.png](postman/postmanTestResult_1.png)
+![my_postman_tests.png](postman/postmanTestResult_2.png)
+
+### Postman Test Results Screenshots JSON file
+
+It can be found in this file:
+`postman/peyman_mashhadi_Hiring Backend Test.postman_test_run.json`
+
+## Test Notes:
+
+- I think, for this simple project just writing end2end tests would be sufficient because we don't have any logic or functionalities inside our functions to get any value by writing unit/integration tests for them.
+- I just added two tests in src/user/**tests** for `userService.findMany` and `userSerivce.create` to show if there is some logic in those functions, how can we mock the data coming from `Prisma` and be able to test them. But for now, those tests are not needed.
+
+## Time taken:
+
+- I've spent around 3 days finishing this challenge.
+- It was my first time working with NestJs and Prisma. I had to read documentations and watch tutorial videos to learn about them first. Because of this, it took me more time.
+- I'm really glad that this challenge gave me the chance to learn about these modern technologies and I liked them a lot. Thank you for giving me this opportunity.

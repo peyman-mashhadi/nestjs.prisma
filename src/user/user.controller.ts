@@ -38,16 +38,14 @@ export class UserController {
 
   @Get(':id')
   async findUnique(@Param('id', ParseIntPipe) id, @Req() req: Request): Promise<User> {
-    // we can get includeCredentials as a query param instead of sending always true
     const user: Partial<User> = req.user;
-    return this.usersService.findUnique({ id }, true, user);
+    return this.usersService.findUnique({ id }, user);
   }
 
   @EndpointIsPublic()
   @HttpCode(HttpStatus.OK)
   @Post()
   async create(@Body() createUserDto: CreateUserDto): Promise<User> {
-    console.log('controller createUserDto', createUserDto);
     return this.usersService.create(createUserDto);
   }
 
@@ -78,6 +76,7 @@ export class UserController {
   }
 
   @EndpointIsPublic()
+  @HttpCode(HttpStatus.OK)
   @Post('token')
   async userGetToken(@Body() authenticateUserDto: AuthenticateUserDto): Promise<{ token: string }> {
     return this.usersService.authenticateAndGetJwtToken(authenticateUserDto);
