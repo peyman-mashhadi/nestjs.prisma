@@ -1,0 +1,32 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id              Int         @id @default(autoincrement())
+  name            String?
+  email           String?      @unique
+  email_confirmed Boolean     @default(false)
+  is_admin        Boolean     @default(false)
+  credentials     Credentials @relation(references: [id], fields: [credentials_id], onDelete: SetNull)
+  credentials_id  Int         @unique
+  created_at      DateTime    @default(now())
+  updated_at      DateTime?
+
+  @@map("users")
+}
+
+model Credentials {
+  id         Int       @id @default(autoincrement())
+  hash       String
+  created_at DateTime  @default(now())
+  updated_at DateTime?
+  User       User?
+
+  @@map("credentials")
+}
