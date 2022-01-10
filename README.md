@@ -73,8 +73,8 @@ Command lines:
 
 ### Postman Test Results Screenshots
 
-![my_postman_tests.png](postman/postmanTestResult_1.png)
-![my_postman_tests.png](postman/postmanTestResult_2.png)
+![my_postman_test_result_1.png](testResults/postmanTestResult_1.png)
+![my_postman_test_result_2.png](testResults/postmanTestResult_2.png)
 
 ### Postman Test Results Screenshots JSON file
 
@@ -85,6 +85,14 @@ It can be found in this file:
 
 - I think, for this simple project just writing end2end tests would be sufficient because we don't have any logic or functionalities inside our functions to get any value by writing unit/integration tests for them.
 - I just added two tests in src/user/**tests** for `userService.findMany` and `userSerivce.create` to show if there is some logic in those functions, how can we mock the data coming from `Prisma` and be able to test them. But for now, those tests are not needed.
+
+### Here are the results of unit and e2e tests:
+
+<br>
+<img src="testResults/unit_test_results.png" alt="my_unit_test_result" width="50%"/>
+<hr>
+<img src="testResults/e2e_test_results.png" alt="my_e2e_test_result" width="80%"/>
+<hr>
 
 ## Time taken:
 
