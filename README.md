@@ -1,4 +1,4 @@
-# Keleya Skill-Check
+# NestJS, Prisma Sample
 
 ## Backend
 
